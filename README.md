@@ -1,16 +1,41 @@
-## 前言
+# Website
 
-本分支（`Veridia-dev`）是为保存项目文档所建立的，目前的主要作用为拟定前期开发计划。在第一个正式版本开发完成后，或许将采用文档构建系统来保存文档内容，同时将会发布相应的项目网站。
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-本项目（`Veridia`）的建立意即开发一个类似于`jellyfin`、`plex`、`emby`等可以搭建提供多媒体服务的服务器端程序。初期目标只是单个服务器端程序，以 Web 应用的形式为用户提供服务，后期可能开发更多端设备的客户端程序。
+### Installation
 
-本项目建立的初衷在于不满足于以上提到的应用的一些操作逻辑，所以此应用最初的需求将完全是我自身的需求，当应用发布之后再逐步收集反馈作为后期修改的目标。当然本应用最主要的设计原则为尽可能高的灵活性，以满足尽可能多的人的需求。
+```
+$ yarn
+```
 
+### Local Development
 
+```
+$ yarn start
+```
 
-## 设计过程
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-整个前期设计过程有以下两个章节：
+### Build
 
-- [需求分析](Requirements.md)
-- [开发过程](Development.md)
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
